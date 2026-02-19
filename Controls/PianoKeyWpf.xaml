@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="KeyBard.Controls.PianoKeyWpf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="48"
+             d:DesignWidth="8">
+    <Grid Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=UserControl}}"
+          Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=UserControl}}">
+        <Border x:Name="InnerBorder" BorderBrush="Black" BorderThickness="0.5" Background="White"
+                CornerRadius="0,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- Bound keyboard key label (top area) -->
+                <Viewbox Grid.Row="0"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         Margin="2"
+                         Stretch="Uniform">
+                    <TextBlock x:Name="BoundKeyLabel"
+                               FontWeight="Bold"
+                               Foreground="DarkRed"
+                               Text="">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="-90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Viewbox>
+
+                <!-- Note name label (bottom area) -->
+                <Viewbox Grid.Row="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Bottom"
+                         Margin="1,0,1,2"
+                         Stretch="Uniform">
+                    <TextBlock x:Name="NoteLabel"
+                               FontWeight="SemiBold"
+                               Foreground="Gray"
+                               Text="">
+                        <TextBlock.LayoutTransform>
+                            <RotateTransform Angle="-90" />
+                        </TextBlock.LayoutTransform>
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
