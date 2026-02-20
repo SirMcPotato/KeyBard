@@ -1,5 +1,7 @@
 ﻿# KeyBard
 
+![KeyBard](.github/assets/keybard.png)
+
 KeyBard is a WPF application that reads MIDI files and allows mapping of each piano note to a keyboard key, allowing you to perform MIDI songs directly inside video games that provide in-game instruments.
 
 Whether you’re looking to automate complex songs or just experiment with game instruments, KeyBard makes MIDI performance simple and fun.
