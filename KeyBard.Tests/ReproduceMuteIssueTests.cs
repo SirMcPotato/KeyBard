@@ -44,8 +44,8 @@ public class ReproduceMuteIssueTests
         
         player.Play();
 
-        // Wait a bit for the note to start
-        await Task.Delay(200);
+        // Wait a bit for the 1s delay + note to start
+        await Task.Delay(1200);
 
         // Verify NoteOn was sent
         lock (fake.Messages)
@@ -107,8 +107,8 @@ public class ReproduceMuteIssueTests
         
         player.Play();
 
-        // Wait a bit while muted
-        await Task.Delay(200);
+        // Wait a bit while muted (1s delay + 200ms of note)
+        await Task.Delay(1200);
 
         // Verify NO NoteOn was sent (or it was sent but ignored if player handles it internally)
         // Actually, current implementation sends it to midiOut anyway because it only mutes via Volume CC.

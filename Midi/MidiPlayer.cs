@@ -58,6 +58,8 @@ public sealed class MidiPlayer(IMidiOutput midiOut) : IDisposable
         }
     }
 
+    private const int StartDelayMs = 1000;
+
     public double PlaybackSpeed
     {
         get => _playbackSpeed;
@@ -215,7 +217,7 @@ public sealed class MidiPlayer(IMidiOutput midiOut) : IDisposable
         Stop();
         _midiFile = midiFile;
         _allEvents = midiFile.Events.SelectMany(t => t).OrderBy(e => e.AbsoluteTime).ToList();
-        ElapsedMs = 0;
+        ElapsedMs = -StartDelayMs;
     }
 
     public void Play()
@@ -254,7 +256,7 @@ public sealed class MidiPlayer(IMidiOutput midiOut) : IDisposable
         _pauseEvent.Set();
         _stopwatch.Stop();
         _stopwatch.Reset();
-        _offsetMs = 0;
+        _offsetMs = -StartDelayMs;
 
         lock (_notesLock)
         {

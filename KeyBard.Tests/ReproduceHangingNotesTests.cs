@@ -43,8 +43,8 @@ public class ReproduceHangingNotesTests
         
         player.Play();
 
-        // Wait for note to start
-        await Task.Delay(200);
+        // Wait for 1s delay + some time for note to start
+        await Task.Delay(1200);
 
         bool noteStarted = false;
         lock (fake.Messages)
@@ -100,8 +100,8 @@ public class ReproduceHangingNotesTests
         
         player.Play();
 
-        // Wait for note to start
-        await Task.Delay(200);
+        // Wait for 1s delay + some time for note to start
+        await Task.Delay(1200);
 
         // Restarting is basically setting ElapsedMs = 0 then Play()
         int countBeforeRestart = fake.Messages.Count;

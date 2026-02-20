@@ -767,6 +767,7 @@ public partial class MainWindow : Window
 
     private string FormatTime(double ms)
     {
+        if (ms < 0) ms = 0;
         var time = TimeSpan.FromMilliseconds(ms);
         return $"{(int)time.TotalMinutes:D2}:{time.Seconds:D2}";
     }
@@ -781,7 +782,7 @@ public partial class MainWindow : Window
         _isDraggingProgress = false;
         if (_player != null)
         {
-            _player.ElapsedMs = Progress.Value;
+            _player.ElapsedMs = Math.Max(-1000, Progress.Value);
             _visualizer?.RebuildVisuals();
         }
     }
