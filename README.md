@@ -2,11 +2,16 @@
 
 ![KeyBard](.github/assets/keybard.png)
 
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue?style=for-the-badge)](https://github.com/SirMcPotato/KeyBard/releases)
+
 KeyBard is a WPF application that reads MIDI files and allows mapping of each piano note to a keyboard key, allowing you to perform MIDI songs directly inside video games that provide in-game instruments.
 
 Whether you’re looking to automate complex songs or just experiment with game instruments, KeyBard makes MIDI performance simple and fun.
 
 Built with .NET 8 and powered by NAudio.
+
+
+👉 **[Download the latest version from the Releases page](https://github.com/SirMcPotato/KeyBard/releases)**
 
 ---
 
@@ -35,6 +40,16 @@ Built with .NET 8 and powered by NAudio.
 
 - 💾 **Profile Support**  
   Save and load configurations for different songs, mappings, or setups.
+
+---
+
+## 🚀 How It Works
+
+1. Load a MIDI file.
+2. Configure your keyboard mapping.
+3. Start playback.
+4. Switch to your game.
+5. Let KeyBard perform the music 🎵
 
 ---
 
