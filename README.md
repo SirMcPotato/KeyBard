@@ -75,7 +75,7 @@ Feedback, issues, and contributions are welcome!
 
 ---
 
-## 🚀 Getting Started
+## 🖥️ Getting Started
 
 ### Installation
 
